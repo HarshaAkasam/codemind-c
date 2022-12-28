@@ -1,31 +1,34 @@
 #include<stdio.h>
 int main()
 {
-    int u;
-    float cu;
-    scanf("%d",&u);
-    if(u<200)
-    cu=1.20;
-    else if(u>=200 && u<400)
-    cu=1.50;
-    else if(u>400 && u<600)
-    cu=1.80;
-    else if(u>=600)
-    cu=2.00;
-    float bill,charge;
-    bill=cu*u;
-    charge=bill*0.15;
-    if(bill>400)
+    int units,uc=0;
+    scanf("%d",&units);
+    float bill,sr,tb;
+    if(units<200)
     {
-        if(charge<100)
-        charge=100;
-        bill=charge+bill;
+        bill=units*1.20;
+    }    
+    else if(units>200 && units<400)
+    {
+        bill=units*1.50;
+    }
+    else if(units>=400 && units<600)
+    {
+        bill=units*1.80;
     }
     else
     {
-        if(charge<100)
-        charge=100;
-        bill=bill+charge;
+        bill=units*2.00;
     }
-    printf("%.2f",bill);
+    if(bill>=400)
+    {
+        sr=bill*0.15;
+        tb=bill+sr;
+        printf("%0.2f",tb);
+    }
+    else
+    {
+        tb=bill+100;
+        printf("%0.2f",tb);
+    }
 }
