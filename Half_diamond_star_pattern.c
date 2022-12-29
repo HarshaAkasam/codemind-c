@@ -24,4 +24,4 @@ int main()
         {
             printf("The pattern is not possible");
         }
-}    
+}   
